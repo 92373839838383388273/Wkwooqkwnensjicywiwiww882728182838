@@ -48,7 +48,7 @@ game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer(unpack({
 }))
 
 
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/92373839838383388273/Wkwooqkwnensjicywiwiww882728182838/refs/heads/main/Scarlet_Hub_Title_Glow_Updated.txt"))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/92373839838383388273/Wkwooqkwnensjicywiwiww882728182838/refs/heads/main/Scarlet_Hub_Title_No_Glow.txt"))()
 
 local Window = redzlib:MakeWindow({
 
