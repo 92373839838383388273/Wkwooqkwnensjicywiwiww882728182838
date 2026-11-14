@@ -59,120 +59,15 @@ local Window = redzlib:MakeWindow({
 
 Window:AddMinimizeButton({
     Button = {
-        Image = "rbxassetid://91477034949009",
-        BackgroundTransparency = 0
+        Image = "rbxassetid://71658075157444",
+        BackgroundTransparency = 100
     },
     Corner = {
         CornerRadius = UDim.new(35, 1)
     },
 })
 
---// LED ANIMADO NO BOTÃO 
 
-local TweenService = game:GetService("TweenService")
-local CoreGui = game:GetService("CoreGui")
-
-task.spawn(function()
-
-    -- Espera a interface da Zyro carregar
-    local Nexus
-
-    for i = 1, 50 do
-        Nexus = CoreGui:FindFirstChild("Nexus Library V1")
-
-        if Nexus then
-            break
-        end
-
-        task.wait(0.1)
-    end
-
-    if not Nexus then
-        warn("[Vortex Hub] Nexus Library V1 não encontrado.")
-        return
-    end
-
-    -- Pega o botão original
-    local Button
-
-    for i = 1, 50 do
-        Button = Nexus:FindFirstChild("ImageButton")
-
-        if Button then
-            break
-        end
-
-        task.wait(0.1)
-    end
-
-    if not Button then
-        warn("[Vortex Hub] Botão da Zyro não encontrado.")
-        return
-    end
-
-    -- Remove LED antigo caso o script seja executado novamente
-    local OldLED = Button:FindFirstChild("VortexLED")
-
-    if OldLED then
-        OldLED:Destroy()
-    end
-
-    -- Cria a borda LED com cor branca
-    local LED = Instance.new("UIStroke")
-    LED.Name = "VortexLED"
-    LED.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    LED.Color = Color3.fromRGB(255, 255, 255) -- Branco
-    LED.Thickness = 2
-    LED.Transparency = 0
-    LED.Parent = Button
-
-    -- Animação
-    task.spawn(function()
-        while Button.Parent and LED.Parent do
-
-            local Dim = TweenService:Create(
-                LED,
-                TweenInfo.new(
-                    0.8,
-                    Enum.EasingStyle.Sine,
-                    Enum.EasingDirection.InOut
-                ),
-                {
-                    Transparency = 0.65,
-                    Thickness = 1.5
-                }
-            )
-
-            Dim:Play()
-            Dim.Completed:Wait()
-
-            if not Button.Parent or not LED.Parent then
-                break
-            end
-
-            local Bright = TweenService:Create(
-                LED,
-                TweenInfo.new(
-                    0.8,
-                    Enum.EasingStyle.Sine,
-                    Enum.EasingDirection.InOut
-                ),
-                {
-                    Transparency = 0,
-                    Thickness = 3
-                }
-            )
-
-            Bright:Play()
-            Bright.Completed:Wait()
-        end
-    end)
-end)
-
-
---// RESTO DO SEU SCRIPT CONTINUA AQUI
-
-    
 task.delay(1, function()
    Window:Dialog({
       Title = "      BEM-VINDO AO SCARLET HUB",
