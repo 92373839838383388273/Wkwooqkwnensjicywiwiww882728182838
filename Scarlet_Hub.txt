@@ -48,11 +48,11 @@ game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer(unpack({
 }))
 
 
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/92373839838383388273/Wkwooqkwnensjicywiwiww882728182838/refs/heads/main/Vortex_Hub_Fixed%20(1)%20(2).txt"))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/92373839838383388273/Wkwooqkwnensjicywiwiww882728182838/refs/heads/main/Scarlet_Hub_Red_Theme.txt"))()
 
 local Window = redzlib:MakeWindow({
 
-  Title = "Scarlet Hub",
+  Title = " The Scarlet Hub",
   SubTitle = "By: Vitinzw22 and Cafezin",
   SaveFolder = "testando | v5"
 })
